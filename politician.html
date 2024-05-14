@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Tracking Politicians</h1>
+  <p>Still scraping data from <a href="https://www.capitoltrades.com/politicians" target="_blank" rel="noreferrer noopener">https://www.capitoltrades.com/politicians</a></p>
+  <div>  
+    <label for="bullish">Bullish market(Small Market caps)</label>
+    <input type="text" class="form-control" id="bullish" name="bullish" placeholder="Search companies with potential">
+  
+    <label for ="bearish"> Bearish Market(Govt in pockets)</label>
+    <input type="text" class="form-control" id="bearish" name="bearish" placeholder="Secure your profits with giants">
+  
+  </div>
+{% endblock %}

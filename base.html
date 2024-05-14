@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="main.css">
+    <style>
+        body {
+            background-color: #ecccd8; /* Set your desired color code */
+        }
+    </style>
+
+    <title>{% block title %}Home{% endblock %}</title>
+</head>
+<p1>
+    <h1>{{ greetings }}</h1>
+</p1>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" id="home" href="/">Home</a>
+            <a class="nav-item nav-link" id="login" href="/login">Login</a>
+            <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
+            {% if not logged_in %}
+            <a class="nav-item nav-link" id="Sign in to unlock more" href="/sign-up">Sign in to unlock more</a>
+            {% endif %}
+                 <!-- Make sure user is logged in -->
+                {% if logged_in %}
+                <a class="nav-item nav-link" id="politician" href="/politician">Monitor Politicians Trades!</a>
+                <a class="nav-item nav-link" id="explanation" href="/explanation">About Us</a>
+                <a class="nav-item nav-link" id="own_pred" href="/own_pred">Own Prediction Script</a>
+                <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+                {% endif %}
+          </div>
+        </div>
+      </nav>
+      
+      <!-- Add Bootstrap JS and Popper.js -->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    {% set messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ 'danger' if category == 'error' else 'success' }} alert-dismissible fade show"
+                role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    {% block content %}
+    <h1>Basic tracking site of stocks
+        {{ greetings }}
+    </h1>
+    {% endblock %}
+
+    {% block head %}{% endblock %}
+
+    <!-- Your additional content goes here -->
+
+</body>
+
+</html>

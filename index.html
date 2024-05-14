@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <!DOCTYPE html>
+    <html>
+        
+    <head>
+        
+        <style>
+            body{
+                background-color: rgb(179, 193, 202);
+            }
+
+            #options-container {
+                max-width: 60px;
+                margin: 50px auto;
+                background-color: rgba(0, 0, 0, 0.5);
+                padding: 20px;
+                border-radius: 10px;
+                color: #fff;
+            }
+
+            input, select, button {
+                width: 100%;
+                padding: 10px; 
+                margin-bottom: 10px;
+                box-sizing: border-box;
+                font-size: 16px;
+            }
+
+            button {
+                background-color: #263026;
+                color: #fff;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #5c5e5c;
+            }
+        </style>
+    </head>
+    <body>
+<img src=static\light.jpg" alt="IDK WHAT TO PUT">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<h1>{{greetings}}</h1>
+        <form method="POST" action="/">
+
+            <div class="form-group">
+                <label for="name">Enter Name</label>
+                <input type="name" class="form-control" id="name" name="name" placeholder="Enter name here", required>
+            </div>
+
+            <div class="form-group">   
+                <label for="stocks">Track Stocks!</label>
+                <input type="stocks" class="form-control" id="stocks" name="stocks" placeholder="Enter ticker sign", required>
+            </div>
+            <div class="form-group">   
+                <label for="email/sms">Track via gmail/sms</label>
+                <input type="email/sms" class="form-control" id="email/sms" name="email/sms" placeholder="Enter gmail/sms", required>
+            </div>
+            
+<form method="POST" action="/">    
+    <div class="form-group">
+        <label for="Timer">Time Based Alerts</label>
+        <select name="membership" id="membership">
+            <option value="Hourly">Hourly</option>
+            <option value="Daily">Daily</option>
+            <option value="Weekly" selected>Weekly</option>
+            <option value="Bearish Market">Bearish Market</option>
+            <option value="Bullish Market">Bullish Market</option>
+        </select>
+    </div>
+    
+    <div class="button">
+        <button type="submit">Submit</button>
+
+
+        <!-- THE STYLESHEET IS FROM W# SCHOOL, THIS IS LINKING MY IG AND EMAIL TO ICONS FOR EASY ACCESS -->
+
+
+
+<div>
+    <h4>
+         Please reach out regarding any questions
+    </h4>
+ </div>
+
+    </div>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<a href="https://www.instagram.com/investiwatchers?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noreferrer noopener">
+    <i class="fa fa-instagram" style="font-size: 60px;"></i>
+</a>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<a href="mailto:investiwatchers@gmail.com">
+    <i class="fa fa-google" style="font-size: 60px;"></i>
+</a>
+
+
+
+</form>
+    </body>
+</html>
+
+
+   
+{% endblock %}
+
+{% block body %}
+    <!-- Additional body content goes here -->
+{% endblock %}

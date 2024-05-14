@@ -1,0 +1,38 @@
+{% extends "base.html" %} {% block title %}Home {% endblock %} 
+{% block content%}
+<h1>Sign Up!</h1>
+
+<!-- Flash Messages -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }}" role="alert">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+
+<form method="POST">
+    <h3 align="center">Sign Up!</h3>
+    <div class = "form-group">   
+        <label for="email">Email Adress</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder ="Enter email"></label>
+    </div>
+    <div class="form-group">  
+        <label for="firstName">Enter First Name</label>
+        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter First Name">
+    </div>
+    <div class = "form-group">  
+        <label for="password1">Enter a secure password</label>
+        <input type="password" class="form-control" id="password1" name="password1" placeholder ="Enter password"></label>
+    </div>
+    <div class = "form-group">  
+        <label for="password2">Confirm password</label>
+        <input type="password" class="form-control" id="password2" name="password2" placeholder ="Confirm password"></label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form> 
+{% endblock %} 
